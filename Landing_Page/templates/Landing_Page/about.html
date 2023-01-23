@@ -1,0 +1,15 @@
+﻿{% extends "Landing_Page/layout.html" %}
+
+<html>
+    <head>
+        <title>{{ title }}</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}" />
+    </head>
+    <body>
+        {% block content %}
+        <div><a href="home">Home</a></div>
+        {{ content }}
+        {% endblock %}
+    </body>
+</html>

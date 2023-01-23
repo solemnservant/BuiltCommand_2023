@@ -1,0 +1,18 @@
+﻿{% extends "app/layout.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+{% load staticfiles %}
+<div class="d-flex" style="height:75px"></div>
+    <div class="btn bg-white text-lg-left" style="width:425px">
+        {% block page_header %}
+            <h2>Sign Up</h2>
+        {% endblock page_header %}
+        <form method="post" action="{% url 'users:register' %}">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button name="submit" class="btn btn-secondary">Register</button>
+            <input type="hidden" name="next" value="{% url 'home' %}" />
+        </form>
+    </div>
+{% endblock content %}

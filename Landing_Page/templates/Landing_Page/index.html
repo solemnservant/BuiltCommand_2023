@@ -1,0 +1,15 @@
+{% extends "Landing_Page/layout.html" %}
+
+<html>
+    <head>
+        <title>{{ title }}</title>
+        {% load staticfiles %} <!-- Instruct Django to load static files -->
+        <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}" />
+    </head>
+    <body>
+        {% block content %}
+        <div><a href="about">About</a></div>
+         <span class="message">{{ message }}</span>{{ content }}
+        {% endblock %}
+    </body>
+</html>

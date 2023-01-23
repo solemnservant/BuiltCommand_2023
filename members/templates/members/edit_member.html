@@ -1,0 +1,22 @@
+﻿{% extends "app/layout.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+{% load staticfiles %}
+
+<div class="d-flex" style="height:75px"></div>
+<div class="btn bg-white text-lg-left" style="width:300px">
+    {% block page_header %}
+    <h3><a href="{% url 'members:member' member.id %}"> Company: {{ member }}</a></h3>
+    {% endblock page_header %}
+    <hr />
+    <form action="{% url 'members:edit_member' member.id %}" method="post" class="form-horizontal">
+        {% csrf_token %}
+        {% bootstrap_form form %} 
+        {% bootstrap_form localForm%}
+        <button class="btn btn-secondary" name="submit">Save changes</button>
+    </form>
+</div>
+    
+
+{% endblock %}

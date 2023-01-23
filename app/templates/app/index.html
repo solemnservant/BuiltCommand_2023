@@ -1,0 +1,103 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+<div class="jumbotron btn-outline-light bg-transparent">
+   
+    <div class="d-flex justify-content-center">
+        <div class="btn btn-group p-sm-0 m-xl-3 bg-white">
+            <button class="btn btn-dark  p-lg-2 pr-0 btn-lg font-weight-normal disabled">built</button> 
+            <button class="btn bg-white  pr-md-4 btn-lg font-weight-normal disabled">command</button>
+        </div>
+    </div>
+
+
+    <div class="d-flex" style="height:75px"></div>
+    <h3 class="text-light font-weight-bold text-xl-center" >Facility Management at your fingertips.</h3>
+        <div class="d-flex" style="height:25px"></div>
+    <div class="d-flex justify-content-center">
+    <p><a href="https://www.djangoproject.com/" class="btn btn-light">Learn more &raquo;</a></p>
+    </div>
+
+
+</div>
+<div class="card-deck">
+    <div class="card" style="width:400px">
+        <img  src="{% static "app/content/img/officeSpace1.jpg" %}" />
+        <div class="card-body">
+            <h2 class="card-title text-center">Build</h2>
+            <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <p><a class="btn btn-secondary btn-outline-white" href="https://djangobook.com/django-tutorials/">Learn more &raquo;</a></p>
+        </div>
+    </div>
+    <div class="card" style="width:400px">
+        <img  src="{% static "app/content/img/officeSpace3.jpg" %}"/>
+        <div class="card-body">
+            <h2 class="card-title text-center">Collaborate</h2>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <p><a class="btn btn-secondary btn-outline-white" href="https://pypi.org/">Learn more &raquo;</a></p>
+        </div>
+    </div>
+    <div class="card" style="width:400px">
+        <img src="{% static "app/content/img/officeSpace2.jpg" %}"/>
+        <div class="card-body">
+            <h2 class="card-title text-center">Sustain</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <p><a class="btn btn-secondary btn-outline-white" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
+        </div>
+    </div>
+</div>
+
+
+<div class="d-flex" style="height:75px"></div>
+    <h2 class="text-light font-weight-bold text-xl-center" >Meet the Team!</h2>
+        <div class="d-flex" style="height:25px"></div>
+
+
+<div class="card-deck">
+    <div class="card card-img-top" style="width:400px">
+        <img  src="{% static "app/content/img/TeamMembers/jdoe.jpg" %}"/>
+        <div class="card-body">
+            <h2 class="card-title text-center">John Doe</h2>
+            <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <p><a class="btn container-fluid btn-outline-secondary text-center" href="https://djangobook.com/django-tutorials/">Contact &raquo;</a></p>
+        </div>
+    </div>
+    <div class="card" style="width:400px">
+        <img  src="{% static "app/content/img/TeamMembers/janeDoe.jpg" %}"/>
+        <div class="card-body">
+            <h2 class="card-title text-center">Jane Doe</h2>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <p><a class="btn container-fluid btn-outline-secondary text-center" href="https://pypi.org/">Contact &raquo;</a></p>
+        </div>
+    </div>
+    <div class="card" style="width:400px">
+        <img src="{% static "app/content/img/TeamMembers/mRoss.jpg" %}"/>
+        <div class="card-body">
+            <h2 class="card-title text-center">Mike Ross</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <p><a class="btn container-fluid btn-outline-secondary text-center" href="http://azure.microsoft.com">Contact &raquo;</a></p>
+        </div>
+    </div>
+        <div class="card" style="width:400px">
+        <img src="{% static "app/content/img/TeamMembers/DStar.jpg" %}"/>
+        <div class="card-body">
+            <h2 class="card-title text-center">Dan Star</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <p><a class="btn container-fluid btn-outline-secondary text-center" href="http://azure.microsoft.com">Contact &raquo;</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

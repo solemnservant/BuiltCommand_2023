@@ -1,0 +1,24 @@
+﻿{% extends "app/layout.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+{% load staticfiles %}
+<div class="d-flex" style="height:75px"></div>
+    <div class="btn bg-white text-lg-left" style="width:425px">
+    {% block page_header %}
+        <h3>Visit Our Offices</h3>
+    {% endblock page_header %}
+        <ul>
+            {% for member in members %}
+                <li><h5>
+                    <a href="{% url 'members:member' member.id %}">{{ member }}</a>
+                </h5></li>
+            {%empty %}
+                <li><h5>No members have been added yet.</h5></li>
+            {% endfor %}
+        </ul>
+
+        <h3><a class="btn btn-secondary" href=" {% url 'members:new_member' %}">Add a New Location</a></h3>
+
+    </div>
+{% endblock content %}

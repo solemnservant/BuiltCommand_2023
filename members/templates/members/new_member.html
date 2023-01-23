@@ -1,0 +1,19 @@
+﻿{% extends "app/layout.html" %}
+{% block content %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+<div class="d-flex" style="height:75px"></div>
+<div class="btn bg-white text-lg-left font-weight-normal" style="width:425px">
+
+
+<h3 class="pb-2">Add a new location:</h3>
+
+<form action="{% url 'members:new_member' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-secondary" name="submit">Add New Location</button>
+</form>
+</div>
+{% endblock content %}

@@ -1,0 +1,109 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+<div class="d-flex" style="height:25px"></div>
+<div class="btn bg-white text-center" style="width:1124px">
+{% block page_header %}
+    <div class=" text-center"><h2>{{ member }}</h2></div>
+{% endblock page_header %}
+
+    <div class="card-deck">
+      <div class="card">
+        <div class="card-body text-center">
+            {% for local in location %}
+
+                <hr />
+                <h6>Location:</h6>
+                <hr />
+                <p class="card-text">Address:  {{ local.text }}</p>
+                <p class="card-text">Suite No:  {{ local.address2 }}</p>
+                <p class="card-text">City:  {{ local.city }}</p>
+                <p class="card-text">State:  {{ local.state }}</p>
+                <p class="card-text">Zipcode:  {{ local.zipcode}}</p>
+
+                <p>
+                    <a class="btn btn-secondary" href=" {% url 'members:edit_member' member.id %}">Update Info</a>
+                </p>
+
+        {% empty %}
+            <li> Location: There is currently no location assigned.</li>
+        {% endfor %}
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body text-center">
+        {% for leasee in lease %}
+            <hr />
+            <h6>Lease:</h6>
+            <hr />
+            <p class="card-text">{{ leasee.text }}</p>
+            <p class="card-text">Rate: {{ leasee.rate }}</p>
+            <p class="card-text">Location: {{ leasee.location }}</p>   
+            <p class="card-text">Contracted Date: {{ leasee.date }}</p>
+        {% empty %}
+            <h6> Lease: There is currently no location assigned.</h6>            
+        {% endfor %}
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-body text-center">
+        {% for service in softServ %}
+            <hr />
+            <h6>Soft Services:</h6>
+            <hr />
+            <p class="card-text">{{ service.text }}</p>
+            <p class="card-text">Security Detail:  {{ service.security_crew_title }}</p>
+            <p class="card-text">Cleaning Crew:  {{ service.cleaning_crew_title }}</p>
+            <p class="card-text">Landscaping Crew:  {{ service.landscaping_crew_title }}</p>
+            <p class="card-text">Catering Crew:  {{ service.caterer }}</p>
+        {% empty %}
+            <h6> Soft Services: There is currently no location assigned.</h6>      
+        {% endfor %}
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body text-center">
+        {% for service in hardServ %}
+            <hr />
+            <h6>Hard Services:</h6>
+            <hr />
+            <p class="card-text">{{ service.text }}</p>
+            <p class="card-text">Electric Provider:  {{ service.electric_provider }}</p>
+            <p class="card-text">Plumbing Provider:  {{ service.plumbing_provider }}</p>
+            <p class="card-text">HVAC Provider:  {{ service.hvac_provider }}</p>
+            <p class="card-text">Mechanical Provider:  {{ service.mechanical_provider }}</p>
+            <p class="card-text">Fire Safety Provider:  {{ service.fire_safety_provider }}</p>
+        {% empty %}
+            <h6> Hard Services: There is currently no location assigned.</h6>      
+        {% endfor %}
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body text-center">
+        {% for service in safetyServ %}
+            <hr />
+            <h6>Safety Services:</h6>
+            <hr /> 
+            <p class="card-text">{{ service.text }}</p>
+            <p class="card-text">Training Schedule:  {{ service.training_schedule }}</p>
+            <p class="card-text">Audit Schedule:  {{ service.audit_schedule }}</p>
+            <p class="card-text">Safety Meetings:   {{ service.safety_meetings }}</p>
+            <p class="card-text">Safety Coordinator: {{ service.safety_coordinator }}</p>
+            <p class="card-text">Job Safety Analysis:  {{ service.job_safety_analysis }}</p>
+        {% empty %}
+            <h6> Safety Services: There is currently no location assigned.</h6>      
+        {% endfor %}
+        </div>
+      </div>
+    </div>    
+        <p>This site is to display the contents of the Hypespace Member</p>
+
+</div>
+{% endblock content %}
