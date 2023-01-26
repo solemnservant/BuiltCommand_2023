@@ -27,9 +27,9 @@
                     <a class="btn btn-secondary" href=" {% url 'members:edit_member' member.id %}">Update Info</a>
                 </p>
 
-        {% empty %}
-            <h6>Location: There is currently no location assigned.</h6>
-        {% endfor %}
+            {% empty %}
+                <h6>Location: There is currently no location assigned.</h6>
+            {% endfor %}
         </div>
       </div>
 
@@ -44,7 +44,7 @@
             <p class="card-text">Location: {{ leasee.location }}</p>   
             <p class="card-text">Contracted Date: {{ leasee.date }}</p>
         {% empty %}
-            <h6> Lease: There is currently no location assigned.</h6>            
+            <h6> Lease: There is currently not a lease assigned.</h6>            
         {% endfor %}
         </div>
       </div>
@@ -62,7 +62,7 @@
             <p class="card-text">Landscaping Crew:  {{ service.landscaping_crew_title }}</p>
             <p class="card-text">Catering Crew:  {{ service.caterer }}</p>
         {% empty %}
-            <h6> Soft Services: There is currently no location assigned.</h6>      
+            <h6> Soft Services: There is currently not any soft services assigned.</h6>      
         {% endfor %}
         </div>
       </div>
@@ -98,7 +98,7 @@
             <p class="card-text">Safety Coordinator: {{ service.safety_coordinator }}</p>
             <p class="card-text">Job Safety Analysis:  {{ service.job_safety_analysis }}</p>
         {% empty %}
-            <h6> Safety Services: There is currently no location assigned.</h6>      
+            <h6> Safety Services: There is currently not any safety services assigned.</h6>      
         {% endfor %}
         </div>
       </div>
