@@ -3,22 +3,35 @@
 
 {% block content %}
 {% load staticfiles %}
+
 <div class="d-flex" style="height:75px"></div>
     <div class="btn bg-white text-lg-left" style="width:425px">
+
     {% block page_header %}
         <h3>Visit Our Offices</h3>
     {% endblock page_header %}
-        <ul>
-            {% for member in members %}
-                <li><h5>
-                    <a href="{% url 'members:member' member.id %}">{{ member }}</a>
-                </h5></li>
-            {%empty %}
-                <li><h5>No members have been added yet.</h5></li>
-            {% endfor %}
-        </ul>
+        <div  style="height:155px">
+            <div class="card-deck">
+                {% for member in members %}
+                  <div class="card" >
+                    <div class="card-body text-center">
+                        <h5 class="card-text " style="color:gray">
+                            <a  href="{% url 'members:member' member.id %}" style="color:darkcyan">{{ member }}</a>
+                        </h5>
+                    </div>
+                  </div>
+            </div>  
+                {%empty %}
+                    <div class="card-deck">
+                        <div class="card" >
+                            <div class="card-body text-center">
+                                <h5 class="card-text">No members have been added yet.</h5>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
 
-        <h3><a class="btn btn-secondary" href=" {% url 'members:new_member' %}">Add a New Location</a></h3>
-
+            <h3><a class="btn btn-secondary" href=" {% url 'members:new_member' %}">Add a New Location</a></h3>
+        </div>
     </div>
 {% endblock content %}

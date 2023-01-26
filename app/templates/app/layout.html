@@ -46,10 +46,11 @@
 
     <div class="container body-content">
         {% block content %}{% endblock %}
-        <hr/>
+        <hr style="border-color:lightgray"/>
         <footer>
-            <p>&copy; {{ year }} - Built / Command</p>
+            <h6 class="text-white">&copy; {{ year }} - Built / Command</h6>
         </footer>
+
     </div>
     <script src="{% static 'app/scripts/jquery-1.10.2.intellisense.js' %}"></script>
     <script src="{% static 'app/scripts/jquery-1.10.2.js' %}"></script>
