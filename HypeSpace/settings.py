@@ -25,7 +25,10 @@ SECRET_KEY = 'c4914c8e-ac7e-433b-be99-5721c7e71024'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['solemnservant.pythonanywhere.com']
+ALLOWED_HOSTS = [
+    'solemnservant.pythonanywhere.com',
+    'localhost'
+    ]
 
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
