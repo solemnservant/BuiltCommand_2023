@@ -29,6 +29,10 @@
 
             {% empty %}
                 <h6>Location: There is currently no location assigned.</h6>
+                
+                <p>
+                    <a class="btn btn-secondary" href=" {% url 'members:edit_member' member.id %}">Update Info</a>
+                </p>
             {% endfor %}
         </div>
       </div>
