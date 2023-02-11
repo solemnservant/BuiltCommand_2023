@@ -25,7 +25,7 @@ class MemberForm(forms.ModelForm):
 class LocationForm(forms.ModelForm):
     class Meta: 
         model = Location 
-        fields = ['text', 'address2', 'city', 'state', 'zipcode']
+        fields = ['address', 'address2', 'city', 'state', 'zipcode']
 
 class LeaseForm(forms.ModelForm):
     class Meta: 

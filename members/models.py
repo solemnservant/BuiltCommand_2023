@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Member(models.Model):
     #A Member is composed of the company general info
-    text = models.CharField('Company Name',default = 'Company Name', max_length = 200)
+    text = models.CharField('Office Name',default = 'Office Name', max_length = 200)
     phone_num = models.CharField('Phone Number', default = '000-000-000', max_length = 12)
     ceo_name = models.CharField ('CEO', max_length = 50)
     num_employees = models.IntegerField('Number of Employees', default = 0)
@@ -19,7 +19,7 @@ class Member(models.Model):
 class Location(models.Model):
     #Location holds headquarters and satellite facilities info
     member = models.ForeignKey(Member, on_delete = models.CASCADE)
-    text = models.CharField('Address', default = 'Address', max_length = 250)
+    address = models.CharField('Address', default = 'Address', max_length = 250)
     address2 = models.CharField('Address_2',  default = 'Address_2', max_length = 250)
     city = models.CharField(max_length = 250)
     state = models.CharField(max_length = 250)
