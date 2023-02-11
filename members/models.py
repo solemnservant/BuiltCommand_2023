@@ -27,7 +27,7 @@ class Location(models.Model):
 
     def __str__(self):
         """Return a string representation of the model."""
-        return self.text
+        return self.address
 
 class Lease(models.Model):
     #Leasing information for company's facilities
